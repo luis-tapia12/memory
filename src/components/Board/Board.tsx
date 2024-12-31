@@ -4,12 +4,12 @@ import { GameContext } from "../../context/gameContext";
 const Board = () => {
   const { cards } = useContext(GameContext);
   return (
-    <div>
+    <div className="board">
       {cards.map((card, cardIndex) => (
-        <div key={cardIndex}>
-          <div>{card.icon}</div>
-          <div>{card.label}</div>
-        </div>
+        <button key={cardIndex} className={`card ${card.show && "show"}`}>
+          <span>{card.icon}</span>
+          <span>{card.label}</span>
+        </button>
       ))}
     </div>
   );

@@ -4,15 +4,15 @@ import { GameContext } from "../../context/gameContext";
 const Score = () => {
   const { player1Score, player2Score } = useContext(GameContext);
   return (
-    <div>
-      <h1>MEMORY</h1>
+    <div className="score-container">
+      <h1>PLAYERS</h1>
       <div>
         <div>PLAYER 1</div>
-        <div>{player1Score}</div>
+        <div className="score-value">{player1Score}</div>
       </div>
       <div>
         <div>PLAYER 2</div>
-        <div>{player2Score}</div>
+        <div className="score-value">{player2Score}</div>
       </div>
     </div>
   );

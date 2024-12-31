@@ -9,7 +9,7 @@ export function App() {
     <>
       <MainMenu />
       <GameOvereMenu />
-      <div>
+      <div className="game-container">
         <Score />
         <Board />
       </div>

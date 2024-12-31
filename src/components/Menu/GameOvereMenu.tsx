@@ -1,6 +1,6 @@
 const GameOvereMenu = () => {
   return (
-	<div>
+	<div className="menu">
 	  GameOver
 	</div>
   )
