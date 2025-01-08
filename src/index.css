@@ -1,97 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
 
 body {
-    background-color: #FFF9DE;
-    margin: 0;
-    color: #632739;
-    font-family: "JetBrains Mono", serif;
+	background-color: #fff9de;
+	margin: 0;
+	color: #632739;
+	font-family: 'JetBrains Mono', serif;
 }
 
 #app {
-    background-color: #FFF9DE;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+	background-color: #fff9de;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
 }
 
 .game-container {
-    display: flex;
-    flex-grow: 1;
-    font-size: 1.5rem;
-    text-align: center;
+	display: flex;
+	flex-grow: 1;
+	font-size: 1.5rem;
+	text-align: center;
 }
 
 h1 {
-    font-weight: normal;
-    font-size: 2.5rem;
-    margin: 1rem 0;
+	font-weight: normal;
+	font-size: 2.5rem;
+	margin: 1rem 0;
 }
 
 .board {
-    flex-grow: 1;
-    padding: 2rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, auto);
-    gap: 10px !important;
-    align-content: center;
-    align-items: stretch;
+	flex-grow: 1;
+	padding: 2rem 1rem;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(5, auto);
+	gap: 10px !important;
+	align-content: center;
+	align-items: stretch;
 }
 
 .card {
-    cursor: pointer;
-    font-family: "JetBrains Mono", serif;
-    background-color: #B81C48;
-    color: white;
-    display: block;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    aspect-ratio: 2 / 3;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+	cursor: pointer;
+	font-family: 'JetBrains Mono', serif;
+	background-color: #b81c48;
+	color: white;
+	display: block;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	aspect-ratio: 2 / 3;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
 }
 
 .card.show {
-    background-color: #CDD071;
-    color: #632739;
+	background-color: #cdd071;
+	color: #632739;
 }
 
 .card.unaviable {
-    cursor: default;
-    border: 1.5px dashed #63273955;
-    background-color: transparent;
-    color: transparent;
+	cursor: default;
+	border: 1.5px dashed #63273955;
+	background-color: transparent;
+	color: transparent;
 }
 
 .card span {
-    display: block;
+	display: block;
 }
 
 .card span:first-child {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
 .card span:last-child {
-    font-size: 0.75rem;
+	font-size: 0.75rem;
 }
 
 .score-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+	padding: 2rem;
 }
 
 .score-container > div.active {
-    color: #5D917D;
+	color: #5d917d;
 }
 
 .score-value {
-    font-size: 3rem;
+	font-size: 3rem;
 }
 
 .menu {
@@ -121,7 +121,7 @@ h1 {
 .menu > div > button {
 	color: #632739;
 	font-size: 2rem;
-	background-color: #5D917D;
+	background-color: #5d917d;
 	border: none;
 	outline: none;
 	width: 14rem;
@@ -131,32 +131,32 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    .game-container {
-        flex-direction: column;
-    }
-    .score-container {
-        flex-direction: row;
-        padding-bottom: 0;
-    }
-    .score-container>h1{
-        display: none;
-    }
+	.game-container {
+		flex-direction: column;
+	}
+	.score-container {
+		flex-direction: row;
+		padding-bottom: 0;
+	}
+	.score-container > h1 {
+		display: none;
+	}
 }
 
 @media (max-width: 576px) or (orientation: portrait) {
-    .board {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(10, auto);
-        padding: 1rem;
-    }
+	.board {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(10, auto);
+		padding: 1rem;
+	}
 }
 
 @media (max-width: 576px) {
-    .card span:first-child {
-        font-size: 1.75rem;
-    }
+	.card span:first-child {
+		font-size: 1.75rem;
+	}
 
-    .card span:last-child {
-        font-size: 0.6rem;
-    }
+	.card span:last-child {
+		font-size: 0.6rem;
+	}
 }
