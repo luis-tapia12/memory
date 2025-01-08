@@ -43,10 +43,10 @@ h1 {
 	cursor: pointer;
 	font-family: 'JetBrains Mono', serif;
 	background-color: #b81c48;
-	color: white;
+	color: #b81c48;
 	display: block;
 	outline: none;
-	border: none;
+	border: 1px solid transparent;
 	border-radius: 4px;
 	aspect-ratio: 2 / 3;
 	width: 100%;
