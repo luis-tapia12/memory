@@ -8,8 +8,11 @@ type GameState = {
     cards: Card[];
     player1Score: number;
     player2Score: number;
+    showMainMenu: boolean;
+	showGameOver: boolean;
     turn: number;
     flipCard: (cardIndex: number) => void;
+    restart: () => void;
 };
 
 type GameProviderProps = {
@@ -30,8 +33,17 @@ const GameProvider = ({ children}: GameProviderProps) => {
     const [cards, setCards] = useState(shuffleCards(generateCards()));
     const [player1Score, setPlayer1Score] = useState(0);
     const [player2Score, setPlayer2Score] = useState(0);
+    const [showMainMenu, setShowMainMenu] = useState(true);
+	const [showGameOver, setShowGameOver] = useState(false);
     const [turn, setTurn] = useState<CardOwner>(PLAYER_1);
     const cardsUp = cards.filter((card) => card.show).length;
+    const aviableCards = cards.filter((card) => card.owner === AVIABLE_CARD);
+
+    useEffect(() => {
+        if (!aviableCards.length) {
+            setShowGameOver(true);
+        }
+    }, [aviableCards]);
 
     useEffect(() => {
         if (cardsUp === 2) {
@@ -75,13 +87,25 @@ const GameProvider = ({ children}: GameProviderProps) => {
         }
     }
 
+    const restart = () => {
+        setShowGameOver(false);
+        setShowMainMenu(false);
+        setCards(shuffleCards(generateCards()));
+        setPlayer1Score(0);
+        setPlayer2Score(0);
+        setTurn(PLAYER_1);
+    }
+
     return <GameContext.Provider
         value={{
             cards,
             player1Score,
             player2Score,
+            showGameOver,
+            showMainMenu,
             turn,
-            flipCard
+            flipCard,
+            restart
         }}
     >
         {children}
