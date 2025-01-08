@@ -12,6 +12,7 @@ export function App() {
 				<Score />
 				<Board />
 			</div>
+			<span className="version">v{import.meta.env.VITE_APP_VERSION}</span>
 		</>
 	);
 }
